@@ -1,0 +1,69 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}CV - ANTOINE CANU{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <div class="cv-header text-center">
+            <h1 class="display-4">MIKAMOU OWEN </h1>
+            <p class="lead text-muted">Alternance Sécurité et Réseaux - 2 ans | 2 semaines / 2 semaines</p>
+        </div>
+
+        <div class="cv-section mb-4">
+            <h2 class="h4 font-weight-bold border-bottom pb-2">À propos de moi</h2>
+            <p class="mb-3">Étudiant en 1ère année de BUT Réseaux et Télécommunications. Je cherche une alternance pour mes deux prochaines années de formation.</p>
+            <ul class="list-unstyled">
+                <li><strong>Permis B</strong></li>
+                <li><strong>Téléphone :</strong> 06.86.03.92.48</li>
+                <li><strong>Email :</strong> <a href="mikamouowen03@gmail.com">willifried.mikamou.mayele.owen@etu.univ-st-etienne.fr</a></li>
+                <li><strong>Adresse :</strong> 3 Rue Raoul Follereau </li>
+                <li><strong>LinkedIn :</strong> <a href="https://www.linkedin.com/in/antoine-canu_678817275" target="_blank">antoine-canu_678817275</a></li>
+            </ul>
+        </div>
+
+        <div class="cv-section mb-4">
+            <h2 class="h4 font-weight-bold border-bottom pb-2">Formations</h2>
+            <ul>
+                {% for formation in formations %}
+                    <li>{{ formation }}</li>
+                {% else %}
+                    <li>Aucune formation renseignée.</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="cv-section mb-4">
+            <h2 class="h4 font-weight-bold border-bottom pb-2">Expériences Professionnelles</h2>
+            <ul>
+                {% for experience in experiences %}
+                    <li>{{ experience }}</li>
+                {% else %}
+                    <li>Aucune expérience professionnelle renseignée.</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="cv-section mb-4">
+            <h2 class="h4 font-weight-bold border-bottom pb-2">Compétences</h2>
+            <ul>
+                {% for competence in competences %}
+                    <li>{{ competence }}</li>
+                {% else %}
+                    <li>Aucune compétence renseignée.</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="cv-section mb-4">
+            <h2 class="h4 font-weight-bold border-bottom pb-2">Langues</h2>
+            <ul>
+                {% for langue in langues %}
+                    <li>{{ langue }}</li>
+                {% else %}
+                    <li>Aucune langue renseignée.</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}
