@@ -31,4 +31,31 @@ class Sae104Controller extends AbstractController
             'langues' => ['Français', 'Anglais'],
             ]);
         }
+        
+    #[Route('accueil/Portofolio', name: 'app_Portofolio')]
+    public function Portofolio(): Response
+    {
+        return $this->render('sae104/Portofolio.html.twig', [
+            'controller_name' => 'Sae104Controller',
+           
+        ]);
+    }
+  
+    #[Route('accueil/FORMULAIRE', name: 'app_FORMULAIRE')]
+    public function FORMULAIRE(): Response
+    {
+        return $this->render('sae104/FORMULAIRE.html.twig', [
+            'controller_name' => 'Sae104Controller',
+           
+        ]);
+    }
+    
+    #[Route('accueil/plus', name: 'app_plus')]
+    public function plus(): Response
+    {
+        return $this->render('sae104/plus.html.twig', [
+            'controller_name' => 'Sae104Controller',
+           
+        ]);
+    }
 }

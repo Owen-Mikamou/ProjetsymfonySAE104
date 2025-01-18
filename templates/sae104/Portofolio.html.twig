@@ -1,23 +1,237 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Accueil{% endblock %}
+{% block title %}Portfolio{% endblock %}
 
 {% block body %}
 
-<div class="container text-center">
-    <h1>Bienvenue sur mon Portfolio !</h1>
-    <p>Nom : MIKAMOU OWEN </p>
-    <p>Groupe TP : B1</p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - MIKAMOU </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <style>
+        body {
+            back-color: rgb(20, 28, 26);
+            color: #fff;
+        }
+        .tabs ul {
+            border-bottom: none;
+        }
+        .tabs a {
+            color: #fff;
+            border-bottom: 2px solid transparent;
+        }
+        .tabs a:hover {
+            border-bottom: 2px solid #1e3a5f; /* Bleu foncé */
+        }
+        .tabs.is-active a {
+            border-bottom: 2px solid #1e3a5f; /* Bleu foncé */
+            color: #1e3a5f; /* Bleu foncé */
+        }
+        .card {
+            background-color: #333;
+            color: #fff;
+            margin: 10px;
+        }
+        .card-content {
+            padding: 20px;
+        }
+        .card-image img {
+            border-radius: 10px;
+        }
+        .card-content a {
+            color: #1e3a5f; /* Bleu foncé */
+        }
+        .card-content a:hover {
+            text-decoration: underline;
+        }
+        .hero {
+            background-color: #102020;
+        }
+        .hero .title {
+            text-align: center;
+            font-size: 3em;
+        }
+        .button.is-primary {
+            background-color: #1e3a5f; /* Bleu foncé */
+            border-color: transparent;
+            color: #fff;
+        }
+        .button.is-primary:hover {
+            background-color: #2a4a7a; /* Bleu foncé plus clair */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar-menu">
+            
+            </div>
+        </div>
+    </header>
 
-    <div class="container mt-5">
-        <h2>À propos de moi</h2>
-        <p>Je suis un étudiant passionné par l'informatique et le développement web. J'aime apprendre de nouvelles technologies et travailler sur des projets innovants.</p>
-    </div>
-    <div class="container mt-5">
-        <h2>Contact</h2>
-        <p>Email: mikamouowen03@gmail.com </p>
-        <p>Téléphone: +33 686039248 </p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/mohammed-islam-choukri-76b511338/">Mon profil LinkedIn</a></p>
-    </div>
-</div>
+    <main>
+       
+
+        <!-- Onglets -->
+        <div class="tabs is-centered">
+            <ul>
+                <li class="is-active" data-tab="projets"><a>Mes Projets</a></li>
+                <li data-tab="competences"><a>Mes Compétences</a></li>
+                <li data-tab="drive"><a>Mon Drive</a></li>
+            </ul>
+        </div>
+
+        <!-- Contenu des onglets -->
+        <div class="container">
+            <!-- Onglet Projets -->
+            <div id="projets" class="tab-content is-active">
+                <h1 class="title has-text-centered">Mes Projets</h1>
+                <div class="columns is-multiline">
+                    <!-- Projet 1 -->
+                    <div class="column is-one-third">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image is-4by3">
+                                    <img src="https://cdn.pixabay.com/photo/2020/05/18/16/17/social-media-5187243_960_720.png" alt="Projet 1">
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <div class="media">
+                                    <div class="media-content">
+                                        <p class="title is-4">Projet 1</p>
+                                        <p class="subtitle is-6">Se présenter sur Internet</p>
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    <p>Ce projet consiste à créer une présence en ligne efficace en utilisant les réseaux sociaux, un portfolio numérique, et un blog personnel.</p>
+                                    <p><strong>Appréciation :</strong> Très satisfait du résultat.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projet 2 -->
+                    <div class="column is-one-third">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image is-4by3">
+                                    <img src="https://media.istockphoto.com/id/1194209490/fr/vectoriel/protection-de-virus-illustration-polygonale-de-mod%C3%A8le-dart-de-vecteur.jpg?s=612x612&w=0&k=20&c=9Zzzpkiw-I5FomlwBdyg9nGdPjMwaLCl4D_ODfra9XE=" alt="Projet 2">
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <div class="media">
+                                    <div class="media-content">
+                                        <p class="title is-4">Projet 2</p>
+                                        <p class="subtitle is-6">Sensibilisation à la Cybersécurité</p>
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    <p>Ce projet vise à sensibiliser les utilisateurs aux bonnes pratiques en matière de cybersécurité.</p>
+                                    <p><strong>Appréciation :</strong> Excellent travail d'équipe.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projet 3 -->
+                    <div class="column is-one-third">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image is-4by3">
+                                    <img src="https://cdn.pixabay.com/photo/2019/08/06/22/48/artificial-intelligence-4389372_960_720.jpg" alt="Projet 3">
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <div class="media">
+                                    <div class="media-content">
+                                        <p class="title is-4">Projet 3</p>
+                                        <p class="subtitle is-6">Initiation aux réseaux informatiques</p>
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    <p>Ce projet consiste à comprendre les bases des réseaux informatiques et à configurer un réseau local.</p>
+                                    <p><strong>Appréciation :</strong> Très instructif.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Onglet Compétences -->
+            <div id="competences" class="tab-content">
+                <h1 class="title has-text-centered">Mes Compétences</h1>
+                <div class="columns is-multiline">
+                    <div class="column is-one-third">
+                        <div class="card">
+                            <div class="card-content">
+                                <p class="title is-4">Administration des réseaux</p>
+                                <p>Gestion des infrastructures réseau et résolution des problèmes.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-one-third">
+                        <div class="card">
+                            <div class="card-content">
+                                <p class="title is-4">Cybersécurité</p>
+                                <p>Sensibilisation aux bonnes pratiques de sécurité informatique.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-one-third">
+                        <div class="card">
+                            <div class="card-content">
+                                <p class="title is-4">Communication</p>
+                                <p>Capacité à travailler en équipe et à communiquer efficacement.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Onglet Drive -->
+            <div id="drive" class="tab-content">
+                <h1 class="title has-text-centered">Mon Drive</h1>
+                <div class="content has-text-centered">
+                    <p>Vous pouvez accéder à mes documents sur Google Drive :</p>
+                    <a href="https://drive.google.com" target="_blank" class="button is-primary">Accéder à mon Drive</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+   
+
+    <script>
+        // Script pour gérer les onglets
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.tabs li');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Désactiver tous les onglets
+                    tabs.forEach(t => t.classList.remove('is-active'));
+                    tabContents.forEach(tc => tc.classList.remove('is-active'));
+
+                    // Activer l'onglet cliqué
+                    tab.classList.add('is-active');
+                    document.getElementById(tab.dataset.tab).classList.add('is-active');
+                });
+            });
+        });
+        
+        <footer class="black py-5">
+            <div class="container px-4 px-lg-5">
+                <div class="small text-center text-muted">
+                    &copy; 2024-2025 MIKAMOU. Tous droits réservés.
+                    <br>
+                    Ce site utilise des ressources libres de droits. 
+                    <a href="https://pixabay.com/" target="_blank" class="text-muted">Source des images : Pixabay</a>.
+                    <br>
+                    Évitez de copier du contenu protégé par des droits d'auteur. Utilisez des ressources libres de droits.
+                </div>
+            </div>
+        </footer>
 {% endblock %}

@@ -1,0 +1,111 @@
+{# Fichier "templete" la racine de mon site #}
+{% extends 'base.html.twig' %}
+
+{# titre de la page#}
+{% block title%} Formulaire
+{% endblock %}
+
+{# le css de la page#}
+{% block stylesheets %}
+ <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+{% endblock %}
+{# le contenu html de cette page#}
+{% block body %}
+<div class="container" id=" formul">
+             <h1 class="ts">Formulaire de téléchargement</h1>
+             <form id="inscription">
+             
+               <fieldset> 
+               <p>
+               <input type="radio" id="sexe" value="h" checked="checked">
+               <label for="sex"> Homme</label> 
+               <input type="radio"  id="sexe" value="f">
+               <label for="sex"> Femme</label> 
+               </p>
+               
+                 <div class="form-group">
+                   <label class="td" for="nom" >Nom</label>
+                   <input type="text"  class="form-control" id="inputFieldId"  placeholder="ex: MIKAMOU OWEN" required >
+                   <div class="erreur">*</div>
+                 </div>
+
+                 <div class="form-group">
+                   <label class="poot" for="number" >Numéro</label>
+                   <input  class="form-control" id="inputFieldId" type="text" pattern="[0-9]+" placeholder="ex: ....." required >
+                   <div class="erreur">*</div>
+                 </div>
+                 
+                 <div class="form-group">
+                   <label class="lid" for="email"  >Mail</label>
+                   <input type="email"  class="form-control" id="inputFieldId"  placeholder=" ex: mikamouowen03@etc.com" required>
+                   <div class="erreur">*</div>
+                 </div>
+                  <div class="form-group">
+                   <label class="lid" for="email">Confirmation Mail</label>
+                   <input type="email"  class="form-control" id="inputFieldId"  placeholder=" ex: mikamouowen03@etc.com" required>
+                   <div class="erreur">*</div>
+                 </div>
+                 <div class="form-group">
+                   <label class="titi" for="nom" >Nom d'entreprise</label>
+                   <input type="text"  class="form-control" id="inputFieldId"  placeholder="ex: SARIS">
+                 </div>
+                <div class="form-group">
+                   <label class="td" for="nom" >Pays</label>
+                   <input type="text"  class="form-control" id="inputFieldId"  placeholder="ex: Madagascar" required >
+                   
+                 </div>
+                 <div class="form-group">
+                   <label class="tart" for="selection">selectionner une page</label>
+                   <select id="selection" class="form-control">
+                     <option value="">Liste de choix...</option>
+                     <optgroup label="Groupe d'options 1">
+                       <option value="">CV</option>
+                       <option value="">Portfolio</option>
+                       <option value="">loisirs</option>
+                   </select>
+                 </div>
+                 <div class="form-group">
+                   <label class="cool" color="white" for="bio">Message</label>
+                   <textarea class="form-control" id="bio" rows="3"></textarea>
+                 </div>
+               </fieldset>
+                <input type="submit"  value="Télécharger">
+             </form>
+         </div>
+         
+         <script>
+          document.forms["inscription"].addEventListner("submit", fonction(e)) {
+          
+          var erreur;
+          var inputs= this;
+
+          for (var i=0; i< inputs.length; i++) {
+            console.log(intputs[i]);
+            if (!inputs[i].value) {
+              erreur="Veuillez remplir tous les champs";
+            }
+
+            }
+           if (erreur) {
+            e.preventDefault();
+            document.getElementById("erreur").innerHTML= erreur;
+            return false;
+
+           } else {
+             alert('Formulaire validé !')
+           }
+
+           <footer class="black py-5">
+            <div class="container px-4 px-lg-5">
+                <div class="small text-center text-muted">
+                    &copy; 2024-2025 MIKAMOU. Tous droits réservés.
+                    <br>
+                    Ce site utilise des ressources libres de droits. 
+                    <a href="https://pixabay.com/" target="_blank" class="text-muted">Source des images : Pixabay</a>.
+                    <br>
+                    Évitez de copier du contenu protégé par des droits d'auteur. Utilisez des ressources libres de droits.
+                </div>
+            </div>
+        </footer>
+
+{% endblock %}
