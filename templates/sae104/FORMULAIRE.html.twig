@@ -2,110 +2,161 @@
 {% extends 'base.html.twig' %}
 
 {# titre de la page#}
-{% block title%} Formulaire
-{% endblock %}
+{% block title %}Formulaire{% endblock %}
 
 {# le css de la page#}
 {% block stylesheets %}
- <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+<style>
+    body {
+        background-color: #000000; /* Noir foncé */
+        color: #ffffff; /* Texte en blanc */
+        font-family: Arial, sans-serif;
+    }
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.1); /* Fond légèrement transparent */
+        border-radius: 15px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    }
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    .form-group input, .form-group select, .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #cccccc;
+        border-radius: 5px;
+        background-color: #333333;
+        color: #ffffff;
+    }
+    .form-group input[type="radio"] {
+        width: auto;
+        margin-right: 10px;
+    }
+    .form-group .erreur {
+        color: red;
+        font-size: 0.9em;
+    }
+    .btn-submit {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1.2em;
+    }
+    .btn-submit:hover {
+        background-color: #0056b3;
+    }
+</style>
 {% endblock %}
+
 {# le contenu html de cette page#}
 {% block body %}
-<div class="container" id=" formul">
-             <h1 class="ts">Formulaire de téléchargement</h1>
-             <form id="inscription">
-             
-               <fieldset> 
-               <p>
-               <input type="radio" id="sexe" value="h" checked="checked">
-               <label for="sex"> Homme</label> 
-               <input type="radio"  id="sexe" value="f">
-               <label for="sex"> Femme</label> 
-               </p>
-               
-                 <div class="form-group">
-                   <label class="td" for="nom" >Nom</label>
-                   <input type="text"  class="form-control" id="inputFieldId"  placeholder="ex: MIKAMOU OWEN" required >
-                   <div class="erreur">*</div>
-                 </div>
-
-                 <div class="form-group">
-                   <label class="poot" for="number" >Numéro</label>
-                   <input  class="form-control" id="inputFieldId" type="text" pattern="[0-9]+" placeholder="ex: ....." required >
-                   <div class="erreur">*</div>
-                 </div>
-                 
-                 <div class="form-group">
-                   <label class="lid" for="email"  >Mail</label>
-                   <input type="email"  class="form-control" id="inputFieldId"  placeholder=" ex: mikamouowen03@etc.com" required>
-                   <div class="erreur">*</div>
-                 </div>
-                  <div class="form-group">
-                   <label class="lid" for="email">Confirmation Mail</label>
-                   <input type="email"  class="form-control" id="inputFieldId"  placeholder=" ex: mikamouowen03@etc.com" required>
-                   <div class="erreur">*</div>
-                 </div>
-                 <div class="form-group">
-                   <label class="titi" for="nom" >Nom d'entreprise</label>
-                   <input type="text"  class="form-control" id="inputFieldId"  placeholder="ex: SARIS">
-                 </div>
-                <div class="form-group">
-                   <label class="td" for="nom" >Pays</label>
-                   <input type="text"  class="form-control" id="inputFieldId"  placeholder="ex: Madagascar" required >
-                   
-                 </div>
-                 <div class="form-group">
-                   <label class="tart" for="selection">selectionner une page</label>
-                   <select id="selection" class="form-control">
-                     <option value="">Liste de choix...</option>
-                     <optgroup label="Groupe d'options 1">
-                       <option value="">CV</option>
-                       <option value="">Portfolio</option>
-                       <option value="">loisirs</option>
-                   </select>
-                 </div>
-                 <div class="form-group">
-                   <label class="cool" color="white" for="bio">Message</label>
-                   <textarea class="form-control" id="bio" rows="3"></textarea>
-                 </div>
-               </fieldset>
-                <input type="submit"  value="Télécharger">
-             </form>
-         </div>
-         
-         <script>
-          document.forms["inscription"].addEventListner("submit", fonction(e)) {
-          
-          var erreur;
-          var inputs= this;
-
-          for (var i=0; i< inputs.length; i++) {
-            console.log(intputs[i]);
-            if (!inputs[i].value) {
-              erreur="Veuillez remplir tous les champs";
-            }
-
-            }
-           if (erreur) {
-            e.preventDefault();
-            document.getElementById("erreur").innerHTML= erreur;
-            return false;
-
-           } else {
-             alert('Formulaire validé !')
-           }
-
-           <footer class="black py-5">
-            <div class="container px-4 px-lg-5">
-                <div class="small text-center text-muted">
-                    &copy; 2024-2025 MIKAMOU. Tous droits réservés.
-                    <br>
-                    Ce site utilise des ressources libres de droits. 
-                    <a href="https://pixabay.com/" target="_blank" class="text-muted">Source des images : Pixabay</a>.
-                    <br>
-                    Évitez de copier du contenu protégé par des droits d'auteur. Utilisez des ressources libres de droits.
-                </div>
+<div class="container" id="formul">
+    <h1>Formulaire de téléchargement</h1>
+    <form id="inscription">
+        <fieldset>
+            <div class="form-group">
+                <label for="sexe">Sexe</label>
+                <input type="radio" id="sexe-h" name="sexe" value="h" checked="checked">
+                <label for="sexe-h">Homme</label>
+                <input type="radio" id="sexe-f" name="sexe" value="f">
+                <label for="sexe-f">Femme</label>
             </div>
-        </footer>
+            <div class="form-group">
+                <label for="nom">Nom</label>
+                <input type="text" class="form-control" id="nom" placeholder="ex: MIKAMOU OWEN" required>
+                <div class="erreur">*</div>
+            </div>
+            <div class="form-group">
+                <label for="number">Numéro</label>
+                <input type="text" class="form-control" id="number" pattern="[0-9]+" placeholder="ex: ....." required>
+                <div class="erreur">*</div>
+            </div>
+            <div class="form-group">
+                <label for="email">Mail</label>
+                <input type="email" class="form-control" id="email" placeholder="ex: mikamouowen03@etc.com" required>
+                <div class="erreur">*</div>
+            </div>
+            <div class="form-group">
+                <label for="email-confirm">Confirmation Mail</label>
+                <input type="email" class="form-control" id="email-confirm" placeholder="ex: mikamouowen03@etc.com" required>
+                <div class="erreur">*</div>
+            </div>
+            <div class="form-group">
+                <label for="entreprise">Nom d'entreprise</label>
+                <input type="text" class="form-control" id="entreprise" placeholder="ex: SARIS">
+            </div>
+            <div class="form-group">
+                <label for="pays">Pays</label>
+                <input type="text" class="form-control" id="pays" placeholder="ex: Madagascar" required>
+            </div>
+            <div class="form-group">
+                <label for="selection">Sélectionner une page</label>
+                <select id="selection" class="form-control">
+                    <option value="">Liste de choix...</option>
+                    <optgroup label="Groupe d'options 1">
+                        <option value="cv">CV</option>
+                        <option value="portfolio">Portfolio</option>
+                        <option value="loisirs">Loisirs</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="bio">Message</label>
+                <textarea class="form-control" id="bio" rows="3"></textarea>
+            </div>
+        </fieldset>
+        <input type="submit" class="btn-submit" value="Télécharger">
+    </form>
+</div>
+
+<script>
+    document.forms["inscription"].addEventListener("submit", function(e) {
+        var erreur;
+        var inputs = this;
+
+        for (var i = 0; i < inputs.length; i++) {
+            if (!inputs[i].value) {
+                erreur = "Veuillez remplir tous les champs";
+            }
+        }
+        if (erreur) {
+            e.preventDefault();
+            document.querySelector(".erreur").innerHTML = erreur;
+            return false;
+        } else {
+            alert('Formulaire validé !');
+        }
+    });
+</script>
+
+<footer class="black py-5">
+    <div class="container px-4 px-lg-5">
+        <div class="small text-center text-muted">
+            &copy; 2024-2025 MIKAMOU. Tous droits réservés.
+            <br>
+            Ce site utilise des ressources libres de droits. 
+            <a href="https://pixabay.com/" target="_blank" class="text-muted">Source des images : Pixabay</a>.
+            <br>
+            Évitez de copier du contenu protégé par des droits d'auteur. Utilisez des ressources libres de droits.
+        </div>
+    </div>
+</footer>
 
 {% endblock %}
